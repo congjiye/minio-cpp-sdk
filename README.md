@@ -65,6 +65,14 @@ make
 
 所有接口方法都有相应的注释，用户可以自行查看 minio.h 文件查看相应的接口使用方法。
 
+### CMAKE 使用
+
+```text
+include_directories("your-install-path/minio/include")
+link_directories("your-install-path/minio/lib)
+target_link_libraries(project PRIVATE minio)
+```
+
 ### 下载文件
 
 ```c++

@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 
+extern std::string EXTERN_TEST;
+
 /**
  * Minio bascit auth configuration
  * 

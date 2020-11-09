@@ -1,6 +1,6 @@
 # minio-cpp
 
-该项目提供 Minio C++ 版本的 SDK。使用方式和 Minio 官方提供的版本类似。用户可以查看 [Minio 官网](http://docs.minio.org.cn/docs/master/python-client-api-reference) 查看所有 API 用法。
+该项目提供 Minio C++ 版本的 SDK。使用方式和 Minio 官方提供的版本类似, 使用方便，使用时无外部依赖。用户可以查看 [Minio 官网](http://docs.minio.org.cn/docs/master/python-client-api-reference) 查看所有 API 用法。
 
 ![](https://img.shields.io/badge/platform-linux-orange.svg)
 ![](https://img.shields.io/badge/language-c%2B%2B-blue.svg)

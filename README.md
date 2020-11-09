@@ -57,7 +57,7 @@ make install
 
 ```bash
 git clone http://192.168.1.75:8880/congjiye/minio-cpp.git
-cd minio-cpp-sdk
+cd minio-cpp
 mkdir build && cd build
 cmake ..
 make && make install

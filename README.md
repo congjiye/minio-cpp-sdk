@@ -1,4 +1,4 @@
-# minio-cpp
+# minio-cpp-sdk
 
 该项目提供 Minio C++ 版本的 SDK。使用方式和 Minio 官方提供的版本类似, 使用方便，使用时无外部依赖。用户可以查看 [Minio 官网](http://docs.minio.org.cn/docs/master/python-client-api-reference) 查看所有 API 用法。
 
@@ -51,13 +51,13 @@ make
 make install
 ```
 
-#### 编译 minio-cpp
+#### 编译 minio-cpp-sdk
 
 用户可以通过修改 `-DCMAKE_PREFIX_INSTALL` 来设置安装目录，默认目录为当前源码文件下的 `install` 文件夹。
 
 ```bash
 git clone http://192.168.1.75:8880/congjiye/minio-cpp.git
-cd minio-cpp
+cd minio-cpp-sdk
 mkdir build && cd build
 cmake ..
 make && make install

@@ -81,7 +81,10 @@ target_link_libraries(project PRIVATE minio)
 int main()
 {
     Minio::Minio minio("192.168.1.74:9001", "thunisoft", "6789@jkl");
-    minio.getObject("lib", "demo.cpp", "/root/Projects/ASRProjects/aws-minio/demo.cpp");
+    if(!minio.getObject("lib", "demo.cpp", "/root/Projects/ASRProjects/aws-minio/demo.cpp"))
+    {
+        std::cerr << "下载失败！" << std::endl;
+    }
 }
 ```
 

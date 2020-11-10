@@ -28,6 +28,23 @@ namespace Minio
          */
         bool getObject(string from_bucket, string object_key, string file_path);
 
+        /**
+         * @brief upload data from a file to an object
+         * @param bucket_name       name of bucket
+         * @param file_path         absolute path of file
+         * @param file_name         name of file
+         * @return if file upload is success returned true, if file upload is error returned false
+         */
+        bool putObject(string bucket_name, string file_path,string file_name);
+
+        /**
+         * @brief 创建一个存储桶
+         * @param  bucket_name      存储桶名称
+         * @return 存储桶创建成功返回 true 否则打印识别信息并返回 false
+         */
+        bool makeBucket(string bucket_name);
+
+
     private:
         const string _address;
         const string _access_key;

@@ -7,8 +7,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
 # set(AWSSDK_ROOT_DIR "安装 aws-sdk-cpp 的目录")
 find_package(AWSSDK REQUIRED COMPONENTS s3)
 aux_source_directory(. MINIO_CPP_LIST)
+
 add_library(minio SHARED ${MINIO_CPP_LIST})
-target_link_libraries(minio ${AWSSDK_LIBRARIES})
+target_link_libraries(minio PRIVATE ${AWSSDK_LINK_LIBRARIES})
+
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install")
 install(TARGETS minio LIBRARY DESTINATION lib)

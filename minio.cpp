@@ -73,4 +73,51 @@ namespace Minio
             return false;
         }
     }
+
+    bool Minio::putObject(string bucket_name, string file_path, string file_name)
+    {
+        struct stat buffer;
+
+        if (stat(file_path.c_str(), &buffer) == -1)
+        {
+            std::cout << "Error PutObject: File " << file_name << " does not exist"
+                      << "\n";
+            return false;
+        }
+        Aws::S3::S3Client *s3_client = reinterpret_cast<Aws::S3::S3Client *>(_s3_client);
+        Aws::S3::Model::PutObjectRequest object_request;
+        object_request.SetBucket(bucket_name);
+        object_request.SetKey(file_name);
+
+        std::shared_ptr<Aws::IOStream> input_data = Aws::MakeShared<Aws::FStream>("sSampleAllocationtTag", file_path.c_str(), std::ios_base::in | std::ios_base::binary);
+        object_request.SetBody(input_data);
+        Aws::S3::Model::PutObjectOutcome putObjectOutcome = s3_client->PutObject(object_request);
+
+        if (putObjectOutcome.IsSuccess())
+        {
+            std::cout << "Added object " << file_name << " to bucket ";
+            return true;
+        }
+        std::cout << "Error:putObjeact: " << putObjectOutcome.GetError().GetMessage() << "\n";
+        return false;
+    }
+
+    bool Minio::makeBucket(string bucket_name)
+    {
+        Aws::S3::S3Client *s3_client = reinterpret_cast<Aws::S3::S3Client *>(_s3_client);
+        Aws::S3::Model::CreateBucketRequest request;
+        request.SetBucket(bucket_name);
+
+        auto outcome = s3_client->CreateBucket(request);
+
+        if (!outcome.IsSuccess())
+        {
+            auto err = outcome.GetError();
+            std::cerr << "Error: CreateBucket: " << err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
+            return false;
+        }
+
+        return true;
+    }
+
 } // namespace Minio

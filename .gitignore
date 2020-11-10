@@ -1,5 +1,7 @@
 
 .vscode
+build
+install
 .idea
 
 cmake-build-release

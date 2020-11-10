@@ -33,20 +33,20 @@ CMAKE 选项 | 说明 | 参数
 --|--|--
 -DCMAKE_BUILD_TYPE      | 编译版本             | Release / Debug
 -DBUILD_SHARED_LIBS     | 编译动态或静态库      | OFF / ON
--DCMAKE_PREFIX_INSTALL  | 编译后安装目录        | 安装目录，默认为 /usr/local
+-DCMAKE_INSTALL_PREFIX  | 编译后安装目录        | 安装目录，默认为 /usr/local
 
 ```bash
 # Release 版本
 mkdir cmake-build-release
 cd cmake-build-release
-cmake -DBUILD_ONLY="s3" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_PREFIX_INSTALL=<you-install-path> ..
+cmake -DBUILD_ONLY="s3" -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=<you-install-path> ..
 make
 make install
 
 # Debug 版本
 mkdir cmake-build-debug
 cd cmake-build-debug
-cmake -DBUILD_ONLY="s3" -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=OFF -DCMAKE_PREFIX_INSTALL=<you-install-path> ..
+cmake -DBUILD_ONLY="s3" -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX=<you-install-path> ..
 make
 make install
 ```

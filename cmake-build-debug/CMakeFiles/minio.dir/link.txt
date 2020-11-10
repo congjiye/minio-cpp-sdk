@@ -1,0 +1,2 @@
+/usr/bin/ar qc libminio.a  CMakeFiles/minio.dir/main.cpp.o CMakeFiles/minio.dir/minio.cpp.o
+/usr/bin/ranlib libminio.a

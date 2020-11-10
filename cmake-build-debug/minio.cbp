@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="minio"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\local\;CMake Files\..\..\..\..\..\..\usr\local\lib\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\AWSSDK\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-core\;CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-s3\;CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-event-stream\;CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-event-stream\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-event-stream\cmake\static\;CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-common\;CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-common\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-common\cmake\static\;CMake Files\..\..\..\..\..\..\usr\local\lib\aws-checksums\;CMake Files\..\..\..\..\..\..\usr\local\lib\aws-checksums\cmake\;CMake Files\..\..\..\..\..\..\usr\local\lib\aws-checksums\cmake\static\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="minio">
+				<Option output="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/libminio.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DAWS_SDK_VERSION_MAJOR=1"/>
+					<Add option="-DAWS_SDK_VERSION_MINOR=8"/>
+					<Add option="-DAWS_SDK_VERSION_PATCH=80"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 minio"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="minio/fast">
+				<Option output="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/libminio.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DAWS_SDK_VERSION_MAJOR=1"/>
+					<Add option="-DAWS_SDK_VERSION_MINOR=8"/>
+					<Add option="-DAWS_SDK_VERSION_PATCH=80"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 minio/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main">
+				<Option output="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DAWS_SDK_VERSION_MAJOR=1"/>
+					<Add option="-DAWS_SDK_VERSION_MINOR=8"/>
+					<Add option="-DAWS_SDK_VERSION_PATCH=80"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main/fast">
+				<Option output="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DAWS_SDK_VERSION_MAJOR=1"/>
+					<Add option="-DAWS_SDK_VERSION_MINOR=8"/>
+					<Add option="-DAWS_SDK_VERSION_PATCH=80"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/main.cpp">
+			<Option target="minio"/>
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/minio.cpp">
+			<Option target="minio"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/minio.h">
+			<Option target="minio"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/AWSSDK/AWSSDKConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\AWSSDK\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/AWSSDK/AWSSDKConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\AWSSDK\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/AWSSDK/compiler_settings.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\AWSSDK\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/AWSSDK/platformDeps.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\AWSSDK\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/AWSSDK/sdksCommon.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\AWSSDK\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-core\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-core\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-core\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/aws-cpp-sdk-core/aws-cpp-sdk-core-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-core\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-s3\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-s3\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-s3\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/cmake/aws-cpp-sdk-s3/aws-cpp-sdk-s3-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\cmake\aws-cpp-sdk-s3\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/aws-c-event-stream/cmake/aws-c-event-stream-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-event-stream\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/aws-c-event-stream/cmake/static/aws-c-event-stream-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-event-stream\cmake\static\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/aws-c-event-stream/cmake/static/aws-c-event-stream-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-event-stream\cmake\static\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/aws-c-common/cmake/aws-c-common-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-common\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/aws-c-common/cmake/static/aws-c-common-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-common\cmake\static\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/aws-c-common/cmake/static/aws-c-common-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\aws-c-common\cmake\static\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/aws-checksums/cmake/aws-checksums-config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\aws-checksums\cmake\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/aws-checksums/cmake/static/aws-checksums-targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\aws-checksums\cmake\static\"/>
+		</Unit>
+		<Unit filename="/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/../../../../../../usr/local/lib/aws-checksums/cmake/static/aws-checksums-targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\local\lib\aws-checksums\cmake\static\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -90,6 +90,18 @@ namespace Minio
          */
         bool getObject(string from_bucket, string object_key, string file_path);
 
+        /**
+         * @brief upload data from a file to an object
+         * @param bucket_name       name of bucket
+         * @param file_path         absolute path of file
+         * @param file_name         name of file
+         * @return if file upload is success returned true, if file upload is error returned false
+         */
+        bool putObject(string bucket_name, string file_path,string file_name);
+
+
+
+
     private:
         const string _address;
         const string _access_key;

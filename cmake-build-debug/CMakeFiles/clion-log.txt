@@ -1,0 +1,10 @@
+/home/zjp/tools/clion-2020.2.2/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp
+-- Found AWS SDK for C++, Version: 1.8.80, Install Root:/usr/local, Platform Prefix:, Platform Dependent Libraries: pthread;crypto;ssl;z;curl
+-- Components specified for AWSSDK: s3, application will be depending on libs: aws-cpp-sdk-s3;aws-cpp-sdk-core;aws-c-event-stream;aws-checksums;aws-c-common;pthread;crypto;ssl;z;curl
+-- Try finding aws-cpp-sdk-core
+-- Found aws-cpp-sdk-core
+-- Try finding aws-cpp-sdk-s3
+-- Found aws-cpp-sdk-s3
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug

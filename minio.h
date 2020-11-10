@@ -37,7 +37,12 @@ namespace Minio
          */
         bool putObject(string bucket_name, string file_path,string file_name);
 
-
+        /**
+         * @brief 创建一个存储桶
+         * @param  bucket_name      存储桶名称
+         * @return 存储桶创建成功返回 true 否则打印识别信息并返回 false
+         */
+        bool makeBucket(string bucket_name);
 
 
     private:

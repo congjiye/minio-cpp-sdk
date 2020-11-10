@@ -1,8 +1,0 @@
-/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/CMakeFiles/install/strip.dir
-/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/CMakeFiles/install/local.dir
-/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/CMakeFiles/install.dir
-/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/CMakeFiles/list_install_components.dir
-/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/CMakeFiles/minio.dir
-/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/CMakeFiles/main.dir
-/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/cmake-build-debug/CMakeFiles/rebuild_cache.dir

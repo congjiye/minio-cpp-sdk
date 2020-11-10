@@ -6,24 +6,8 @@
 
 #IncludeRegexTransform: 
 
-/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/minio.cpp
+/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/main.cpp
 iostream
--
-aws/core/Aws.h
--
-aws/s3/S3Client.h
--
-aws/core/auth/AWSCredentialsProvider.h
--
-aws/s3/model/CreateBucketRequest.h
--
-aws/s3/model/PutObjectRequest.h
--
-aws/s3/model/GetObjectRequest.h
--
-sys/stat.h
--
-fstream
 -
 minio.h
 /home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/minio.h

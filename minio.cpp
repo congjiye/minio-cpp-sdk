@@ -246,7 +246,7 @@ namespace Minio
         Aws::S3::S3Client * s3_client = reinterpret_cast<Aws::S3::S3Client *>(_s3_client);
         Aws::S3::Model::PutObjectRequest object_request;
         object_request.SetBucket(bucket_name);
-        object_request.SetKey("minio.h");
+        object_request.SetKey(file_name);
 
         std::shared_ptr<Aws::IOStream> input_data = Aws::MakeShared<Aws::FStream>("sSampleAllocationtTag",file_path.c_str(),std::ios_base::in|std::ios_base::binary);
         object_request.SetBody(input_data);

@@ -6,7 +6,7 @@
 
 int main(){
     Minio::Minio minio("192.168.1.70:9001","thunisoft","6789@jkl");
-    minio.putObject("voice-label/test_minio", "/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/minio.h","minio.h");
+    minio.putObject("voice-label/test_minio", "/home/zjp/workspace/cPlusPlus/minio-cpp-2/minio-cpp/minio.cpp","minio.cpp");
 
 
     std::cout<< "sdf" << std::endl;

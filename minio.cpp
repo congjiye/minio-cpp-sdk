@@ -50,9 +50,9 @@ namespace Minio
         delete reinterpret_cast<Aws::S3::S3Client *>(_s3_client);
     }
 
-    bool Minio::getObject(string from_bucket, string object_key, string file_path)
+    bool Minio::GetObject(string from_bucket, string object_key, string file_path)
     {
-        Aws::S3::S3Client *s3_client = reinterpret_cast<Aws::S3::S3Client *>(_s3_client);
+        auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(_s3_client);
         Aws::S3::Model::GetObjectRequest object_request;
         object_request.SetBucket(from_bucket);
         object_request.SetKey(object_key);

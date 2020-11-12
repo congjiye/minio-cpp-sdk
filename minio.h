@@ -26,7 +26,7 @@ namespace Minio
          * @param  file_path        文件保存的路径
          * @return 如何下载成功返回 true 否则会打印失败信息并返回 false
          */
-        bool getObject(string from_bucket, string object_key, string file_path);
+        bool GetObject(string from_bucket, string object_key, string file_path);
 
         /**
          * @brief upload data from a file to an object

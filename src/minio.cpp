@@ -103,7 +103,7 @@ namespace Minio
         return false;
     }
 
-    bool Minio::MakeBucket(string bucket_name)
+    void Minio::MakeBucket(string bucket_name)
     {
         auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
         Aws::S3::Model::CreateBucketRequest request;
@@ -114,11 +114,8 @@ namespace Minio
         if (!outcome.IsSuccess())
         {
             auto err = outcome.GetError();
-            std::cerr << "Error: CreateBucket: " << err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
-            return false;
+            throw S3ErrorException(err.GetExceptionName().empty() ? "HttpException" : err.GetExceptionName(), err.GetMessage());
         }
-
-        return true;
     }
 
     bool Minio::ListBuckets(vector<string> &buckets)

@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <vector>
+
+#include "minio-exception.h"
 namespace Minio
 {
     using namespace std;
@@ -36,21 +38,20 @@ namespace Minio
          * @param file_name         name of file
          * @return if file upload is success returned true, if file upload is error returned false
          */
-        bool PutObject(string bucket_name, string file_path,string file_name);
+        bool PutObject(string bucket_name, string file_path, string file_name);
 
         /**
          * @brief 创建一个存储桶
          * @param  bucket_name      存储桶名称
-         * @return 存储桶创建成功返回 true 否则打印识别信息并返回 false
          */
-        bool MakeBucket(string bucket_name);
+        void MakeBucket(string bucket_name);
 
         /**
          * @brief 显示所有的存储桶
          * @param  buckets          返回的所有桶信息
          * @return true 
          */
-        bool ListBuckets(vector<string>& buckets);
+        bool ListBuckets(vector<string> &buckets);
 
         /**
          * @brief 判断存储桶是否存在
@@ -58,7 +59,6 @@ namespace Minio
          * @return 如果存储桶存在则返回 true 否则返回 false
          */
         bool BucketExists(string bucket_name);
-
 
     private:
         const string kAddress;

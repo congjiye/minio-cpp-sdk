@@ -2,7 +2,6 @@
 #include <iostream>
 
 #include "minio.h"
-#include "minio-exception.h"
 
 int main(int argc, char **argv)
 {

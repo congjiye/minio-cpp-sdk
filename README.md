@@ -7,7 +7,7 @@
 
 ## 安装 SDK
 
-你可以使用源码进行编译，也可以使用我们预编译好的包使用。[预编译包地址](http://192.168.1.75:8880/congjiye/minio-cpp/-/releases)
+你可以使用源码进行编译，也可以使用我们预编译好的包使用。[预编译包地址](https://github.com/JyCAydon/minio-cpp-sdk/releases/tag/V0.1.0)
 
 ### 源码编译
 
@@ -83,10 +83,15 @@ target_link_libraries(project PRIVATE minio)
 int main()
 {
     Minio::Minio minio("192.168.1.74:9001", "thunisoft", "6789@jkl");
-    if(!minio.getObject("lib", "demo.cpp", "/root/Projects/ASRProjects/aws-minio/demo.cpp"))
+    try
     {
-        std::cerr << "下载失败！" << std::endl;
+        minio.GetObject("lib", "word.txt", "word.txt");
     }
+    catch (const Minio::MinioException &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    return 0;
 }
 ```
 

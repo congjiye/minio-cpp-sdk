@@ -1,12 +1,11 @@
-#include <string>
 #include <iostream>
 
 #include "minio.h"
 
-using std::cerr;
 using std::string;
+using std::cerr;
 
-int main(int argc, char **argv)
+int main(int argc, char** argv)
 {
     Minio::Minio minio("play.min.io",
                        "Q3AM3UQ867SPQQA43P2F",
@@ -14,11 +13,11 @@ int main(int argc, char **argv)
 
     try
     {
-        minio.BucketExists("test5");
+        minio.CopyObjcet("lib", "word.txt", "test1");
     }
-    catch (const Minio::MinioException &e)
+    catch(const Minio::MinioException& e)
     {
-        cerr << e.what() << "\n";
+        std::cerr << e.what() << '\n';
     }
-    return 0;
+    
 }

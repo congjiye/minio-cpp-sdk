@@ -1,10 +1,5 @@
-#include <string>
 #include <iostream>
-
 #include "minio.h"
-
-using std::cerr;
-using std::string;
 
 int main(int argc, char **argv)
 {
@@ -14,11 +9,11 @@ int main(int argc, char **argv)
 
     try
     {
-        minio.BucketExists("test5");
+        minio.GetObject("lib", "word.txt", "word.txt");
     }
     catch (const Minio::MinioException &e)
     {
-        cerr << e.what() << "\n";
+        std::cerr << e.what() << std::endl;
     }
     return 0;
 }

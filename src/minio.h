@@ -27,9 +27,8 @@ namespace Minio
          * @param  from_bucket      文件所在的桶名
          * @param  object_key       文件的路径
          * @param  file_path        文件保存的路径
-         * @return 如何下载成功返回 true 否则会打印失败信息并返回 false
          */
-        bool GetObject(string from_bucket, string object_key, string file_path);
+        void GetObject(string from_bucket, string object_key, string file_path);
 
         /**
          * @brief upload data from a file to an object
@@ -38,7 +37,23 @@ namespace Minio
          * @param file_name         name of file
          * @return if file upload is success returned true, if file upload is error returned false
          */
-        bool PutObject(string bucket_name, string file_path, string file_name);
+        void PutObject(string bucket_name, string file_path, string file_name);
+
+        /**
+         * @brief 拷贝存储桶文件
+         * @param  from_bucket      源存储桶名称
+         * @param  from_file        源对象名称
+         * @param  to_bucket        目标存储桶名称
+         * @param  to_file          目标对象名称
+         */
+        void CopyObjcet(string from_bucket, string from_file, string to_bucket, string to_file = "");
+
+        /**
+         * @brief 删除一个对象
+         * @param  bucket_name      存储桶名称
+         * @param  objcet_key       存储桶里的对象名称
+         */
+        void RemoveObject(string bucket_name, string objcet_key);
 
         /**
          * @brief 创建一个存储桶
@@ -51,7 +66,7 @@ namespace Minio
          * @param  buckets          返回的所有桶信息
          * @return true 
          */
-        bool ListBuckets(vector<string> &buckets);
+        void ListBuckets(vector<string> &buckets);
 
         /**
          * @brief 判断存储桶是否存在
@@ -59,6 +74,12 @@ namespace Minio
          * @return 如果存储桶存在则返回 true 否则返回 false
          */
         bool BucketExists(string bucket_name);
+
+        /**
+         * @brief 删除存储桶
+         * @param  bucket_name      存储桶名
+         */
+        void RemoveBucket(string bucket_name);
 
     private:
         const string kAddress;

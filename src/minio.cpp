@@ -6,6 +6,9 @@
 #include <aws/s3/model/PutObjectRequest.h>
 #include <aws/s3/model/GetObjectRequest.h>
 #include <aws/s3/model/HeadBucketRequest.h>
+#include <aws/s3/model/DeleteBucketRequest.h>
+#include <aws/s3/model/CopyObjectRequest.h>
+#include <aws/s3/model/DeleteObjectRequest.h>
 #include <sys/stat.h>
 #include <fstream>
 
@@ -51,7 +54,7 @@ namespace Minio
         delete reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
     }
 
-    bool Minio::GetObject(string from_bucket, string object_key, string file_path)
+    void Minio::GetObject(string from_bucket, string object_key, string file_path)
     {
         auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
         Aws::S3::Model::GetObjectRequest request;
@@ -60,30 +63,23 @@ namespace Minio
 
         auto outcome = s3_client->GetObject(request);
 
-        if (outcome.IsSuccess())
-        {
-            Aws::OFStream local_file;
-            local_file.open(file_path, std::ios::out | std::ios::binary);
-            local_file << outcome.GetResultWithOwnership().GetBody().rdbuf();
-            return true;
-        }
-        else
+        if (!outcome.IsSuccess())
         {
             auto err = outcome.GetError();
-            std::cerr << "Error: GetObject: " << err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
-            return false;
+            throw S3ErrorException("Error GetObject : " + err.GetExceptionName(), err.GetMessage());
         }
+        Aws::OFStream local_file;
+        local_file.open(file_path, std::ios::out | std::ios::binary);
+        local_file << outcome.GetResultWithOwnership().GetBody().rdbuf();
     }
 
-    bool Minio::PutObject(string bucket_name, string file_path, string file_name)
+    void Minio::PutObject(string bucket_name, string file_path, string file_name)
     {
         struct stat buffer;
 
         if (stat(file_path.c_str(), &buffer) == -1)
         {
-            std::cout << "Error PutObject: File " << file_name << " does not exist"
-                      << "\n";
-            return false;
+            throw S3ErrorException("Error PutObject: File : " + file_name + "does not exist");
         }
         auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
         Aws::S3::Model::PutObjectRequest request;
@@ -94,13 +90,44 @@ namespace Minio
         request.SetBody(input_data);
         auto outcome = s3_client->PutObject(request);
 
-        if (outcome.IsSuccess())
+        if (!outcome.IsSuccess())
         {
-            std::cout << "Added object " << file_name << " to bucket ";
-            return true;
+            auto err = outcome.GetError();
+            throw S3ErrorException("Error PutObject : " + err.GetExceptionName(), err.GetMessage());
         }
-        std::cout << "Error:putObjeact: " << outcome.GetError().GetMessage() << "\n";
-        return false;
+    }
+
+    void Minio::CopyObjcet(string from_bucket, string from_file, string to_bucket, string to_file)
+    {
+        auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
+        Aws::S3::Model::CopyObjectRequest request;
+
+        request.WithCopySource(from_bucket + "/" + from_file)
+            .WithKey(to_file.empty() ? from_file : to_file)
+            .WithBucket(to_bucket);
+
+        auto outcome = s3_client->CopyObject(request);
+
+        if (!outcome.IsSuccess())
+        {
+            auto err = outcome.GetError();
+            throw S3ErrorException("Error CopyObjcet : " + err.GetExceptionName(), err.GetMessage());
+        }
+    }
+
+    void Minio::RemoveObject(string bucket_name, string objcet_key)
+    {
+        auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
+        Aws::S3::Model::DeleteObjectRequest request;
+        request.WithKey(objcet_key)
+            .WithBucket(bucket_name);
+        
+        auto outcome = s3_client->DeleteObject(request);
+        if (!outcome.IsSuccess())
+        {
+            auto err = outcome.GetError();
+            throw S3ErrorException("Error RemoveObjcet : " + err.GetExceptionName(), err.GetMessage());
+        }
     }
 
     void Minio::MakeBucket(string bucket_name)
@@ -114,30 +141,26 @@ namespace Minio
         if (!outcome.IsSuccess())
         {
             auto err = outcome.GetError();
-            throw S3ErrorException(err.GetExceptionName().empty() ? "HttpException" : err.GetExceptionName(), err.GetMessage());
+            throw S3ErrorException("Error MakeBucket : " + err.GetExceptionName(), err.GetMessage());
         }
     }
 
-    bool Minio::ListBuckets(vector<string> &buckets)
+    void Minio::ListBuckets(vector<string> &buckets)
     {
         auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
         auto outcome = s3_client->ListBuckets();
         vector<string>().swap(buckets);
 
-        if (outcome.IsSuccess())
+        if (!outcome.IsSuccess())
         {
-            auto resp = outcome.GetResult().GetBuckets();
-
-            for (auto &bucket : resp)
-            {
-                buckets.push_back(bucket.GetName());
-            }
-            return true;
+            auto err = outcome.GetError();
+            throw S3ErrorException("Error ListBuckets : " + err.GetExceptionName(), err.GetMessage());
         }
-        else
+
+        auto resp = outcome.GetResult().GetBuckets();
+        for (auto &bucket : resp)
         {
-            std::cerr << "Error: ListBuckets: " << outcome.GetError().GetMessage() << std::endl;
-            return false;
+            buckets.push_back(bucket.GetName());
         }
     }
 
@@ -151,11 +174,26 @@ namespace Minio
         if (!outcome.IsSuccess())
         {
             auto err = outcome.GetError();
-            std::cerr << "Error: BucketExists: "
-                      << err.GetExceptionName() << "\n"
-                      << err.GetMessage() << std::endl;
+            if (err.GetExceptionName().empty())
+            {
+                throw S3ErrorException("Error BucketExists : " + err.GetExceptionName(), err.GetMessage());
+            }
             return false;
         }
         return true;
+    }
+
+    void Minio::RemoveBucket(string bucket_name)
+    {
+        auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
+        Aws::S3::Model::DeleteBucketRequest request;
+        request.SetBucket(bucket_name);
+
+        auto outcome = s3_client->DeleteBucket(request);
+        if (!outcome.IsSuccess())
+        {
+            auto err = outcome.GetError();
+            throw S3ErrorException("Error RemoveBucket : " + err.GetExceptionName(), err.GetMessage());
+        }
     }
 } // namespace Minio

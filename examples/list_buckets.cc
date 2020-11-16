@@ -11,11 +11,18 @@ int main(int argc, char **argv)
                        "Q3AM3UQ867SPQQA43P2F",
                        "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG");
 
-    vector<string> buckets;
-    minio.ListBuckets(buckets);
-    for (auto &bucket : buckets)
+    try
     {
-        std::cout << "Bucket Name: " << bucket << "\n";
+        vector<string> buckets;
+        minio.ListBuckets(buckets);
+        for (auto &bucket : buckets)
+        {
+            std::cout << "Bucket Name: " << bucket << "\n";
+        }
+    }
+    catch (const Minio::MinioException &e)
+    {
+        std::cerr << e.what() << "\n";
     }
     return 0;
 }

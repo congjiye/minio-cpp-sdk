@@ -19,4 +19,4 @@ endif()
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install")
 install(TARGETS minio LIBRARY DESTINATION lib)
-install(FILES ${CMAKE_SOURCE_DIR}/src/minio.h DESTINATION include)
+install(FILES ${CMAKE_SOURCE_DIR}/src/minio.h ${CMAKE_SOURCE_DIR}/src/minio-exception.h DESTINATION include)

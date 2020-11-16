@@ -1,4 +1,3 @@
-#include <string>
 #include <iostream>
 
 #include "minio.h"
@@ -14,11 +13,11 @@ int main(int argc, char **argv)
 
     try
     {
-        minio.BucketExists("test5");
+        minio.RemoveObject("lib", "word.txt");
     }
-    catch (const Minio::MinioException &e)
+    catch(const Minio::MinioException& e)
     {
-        cerr << e.what() << "\n";
+        std::cerr << e.what() << '\n';
     }
-    return 0;
+    
 }

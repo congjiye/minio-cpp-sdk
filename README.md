@@ -82,7 +82,9 @@ target_link_libraries(project PRIVATE minio)
 
 int main()
 {
-    Minio::Minio minio("192.168.1.74:9001", "thunisoft", "6789@jkl");
+    Minio::Minio minio("play.min.io",
+                       "Q3AM3UQ867SPQQA43P2F",
+                       "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG");
     try
     {
         minio.GetObject("lib", "word.txt", "word.txt");

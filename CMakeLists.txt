@@ -1,17 +1,22 @@
 cmake_minimum_required(VERSION 3.10)
 project(minio VERSION 0.1.0)
 
+set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
 
-# 如果用户安装到非 /usr/local 目录下，需要将下一行取消注释
-# set(AWSSDK_ROOT_DIR "安装 aws-sdk-cpp 的目录")
-find_package(AWSSDK REQUIRED COMPONENTS s3)
-aux_source_directory(. MINIO_CPP_LIST)
+option(MINIO_BUILD_EXAMPLE "option for build example" ON)
 
-add_library(minio SHARED ${MINIO_CPP_LIST})
-target_link_libraries(minio PRIVATE ${AWSSDK_LINK_LIBRARIES})
+set(AWSSDK_ROOT_DIR "/usr/local" CACHE PATH "AWSSDK Installed dir.")
 
+# 编译 minio 核心模组
+add_subdirectory(src)
+
+message(STATUS "Minio-CPP-SDK Version: ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}.${PROJECT_VERSION_PATCH}")
+
+if (MINIO_BUILD_EXAMPLE)
+    add_subdirectory(examples)
+endif()
 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install")
 install(TARGETS minio LIBRARY DESTINATION lib)
-install(FILES minio.h DESTINATION include)
+install(FILES ${CMAKE_SOURCE_DIR}/src/minio.h ${CMAKE_SOURCE_DIR}/src/minio-exception.h DESTINATION include)

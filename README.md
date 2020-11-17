@@ -7,7 +7,7 @@
 
 ## 安装 SDK
 
-你可以使用源码进行编译，也可以使用我们预编译好的包使用。[预编译包地址](http://192.168.1.75:8880/congjiye/minio-cpp/-/releases)
+你可以使用源码进行编译，也可以使用我们预编译好的包使用。[预编译包地址](https://github.com/JyCAydon/minio-cpp-sdk/releases/tag/V0.1.0)
 
 ### 源码编译
 
@@ -16,7 +16,9 @@ Minio C++ SDK 是基于 AWS S3 的 SDK 二次开发的，因此在源码编译 S
 #### 下载 aws-sdk-cpp
 
 ```bash
-git clone https://github.com/aws/aws-sdk-cpp.git
+https://github.com/JyCAydon/minio-cpp-sdk.gitcd minio-cpp
+cd minio-cpp
+git submodule init && git submodule update
 ```
 
 #### 安装依赖
@@ -36,6 +38,8 @@ CMAKE 选项 | 说明 | 参数
 -DCMAKE_INSTALL_PREFIX  | 编译后安装目录        | 安装目录，默认为 /usr/local
 
 ```bash
+cd aws-sdk-cpp
+
 # Release 版本
 mkdir cmake-build-release
 cd cmake-build-release
@@ -56,7 +60,6 @@ make install
 用户可以通过修改 `-DCMAKE_PREFIX_INSTALL` 来设置安装目录，默认目录为当前源码文件下的 `install` 文件夹。
 
 ```bash
-git clone http://192.168.1.75:8880/congjiye/minio-cpp.git
 cd minio-cpp
 mkdir build && cd build
 cmake ..
@@ -82,11 +85,18 @@ target_link_libraries(project PRIVATE minio)
 
 int main()
 {
-    Minio::Minio minio("192.168.1.74:9001", "thunisoft", "6789@jkl");
-    if(!minio.getObject("lib", "demo.cpp", "/root/Projects/ASRProjects/aws-minio/demo.cpp"))
+    Minio::Minio minio("play.min.io",
+                       "Q3AM3UQ867SPQQA43P2F",
+                       "zuf+tfteSlswRu7BJ86wekitnifILbZam1KYY3TG");
+    try
     {
-        std::cerr << "下载失败！" << std::endl;
+        minio.GetObject("lib", "word.txt", "word.txt");
     }
+    catch (const Minio::MinioException &e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    return 0;
 }
 ```
 
@@ -96,5 +106,5 @@ int main()
 
 ## TODO
 
-1. 完善所有接口实现
-2. 并行接口测试
+- [ ] 完善所有接口实现
+- [ ] 并行接口测试

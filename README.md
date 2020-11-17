@@ -58,7 +58,6 @@ make install
 用户可以通过修改 `-DCMAKE_PREFIX_INSTALL` 来设置安装目录，默认目录为当前源码文件下的 `install` 文件夹。
 
 ```bash
-git clone https://github.com/JyCAydon/minio-cpp-sdk.git
 cd minio-cpp
 mkdir build && cd build
 cmake ..

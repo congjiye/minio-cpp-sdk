@@ -16,7 +16,7 @@ Minio C++ SDK 是基于 AWS S3 的 SDK 二次开发的，因此在源码编译 S
 #### 下载 aws-sdk-cpp
 
 ```bash
-git clone http://192.168.1.75:8880/congjiye/minio-cpp.git
+https://github.com/JyCAydon/minio-cpp-sdk.gitcd minio-cpp
 cd minio-cpp
 git submodule init && git submodule update
 ```
@@ -38,6 +38,8 @@ CMAKE 选项 | 说明 | 参数
 -DCMAKE_INSTALL_PREFIX  | 编译后安装目录        | 安装目录，默认为 /usr/local
 
 ```bash
+cd aws-sdk-cpp
+
 # Release 版本
 mkdir cmake-build-release
 cd cmake-build-release

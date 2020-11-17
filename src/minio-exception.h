@@ -21,7 +21,7 @@ namespace Minio
             : logic_error(s) {}
         virtual ~MinioException() {}
     };
-    
+
     class S3ErrorException : public MinioException
     {
     public:
@@ -30,5 +30,13 @@ namespace Minio
         S3ErrorException(const std::string &name, const std::string &msg)
             : MinioException(name + " : " + msg) {}
         virtual ~S3ErrorException() {}
+    };
+
+    class PathException : public std::logic_error
+    {
+    public:
+        explicit PathException(const std::string &s)
+            : logic_error(s) {}
+        virtual ~PathException() {}
     };
 } // namespace Minio

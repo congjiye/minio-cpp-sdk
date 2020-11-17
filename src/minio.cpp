@@ -71,7 +71,7 @@ namespace Minio
         Aws::OFStream local_file;
         local_file.open(file_path, std::ios::out | std::ios::binary);
         if (!local_file) {
-            throw S3ErrorException("Error GetObject : ", "path is not existed.");
+            throw PathException("Error GetObject : dst path's directory is not existed.");
         }
         local_file << outcome.GetResultWithOwnership().GetBody().rdbuf();
     }

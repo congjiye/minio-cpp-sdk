@@ -16,8 +16,8 @@ Minio C++ SDK 是基于 AWS S3 的 SDK 二次开发的，因此在源码编译 S
 #### 下载 aws-sdk-cpp
 
 ```bash
-https://github.com/JyCAydon/minio-cpp-sdk.gitcd minio-cpp
-cd minio-cpp
+https://github.com/JyCAydon/minio-cpp-sdk.git
+cd minio-cpp-sdk
 git submodule init && git submodule update
 ```
 
@@ -60,7 +60,7 @@ make install
 用户可以通过修改 `-DCMAKE_PREFIX_INSTALL` 来设置安装目录，默认目录为当前源码文件下的 `install` 文件夹。
 
 ```bash
-cd minio-cpp
+cd minio-cpp-sdk
 mkdir build && cd build
 cmake ..
 make && make install

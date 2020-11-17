@@ -16,7 +16,9 @@ Minio C++ SDK 是基于 AWS S3 的 SDK 二次开发的，因此在源码编译 S
 #### 下载 aws-sdk-cpp
 
 ```bash
-git clone https://github.com/aws/aws-sdk-cpp.git
+git clone http://192.168.1.75:8880/congjiye/minio-cpp.git
+cd minio-cpp
+git submodule init && git submodule update
 ```
 
 #### 安装依赖

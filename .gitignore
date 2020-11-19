@@ -2,6 +2,7 @@
 .vscode
 build
 install
+prev-install
 .idea
 
 cmake-build-release

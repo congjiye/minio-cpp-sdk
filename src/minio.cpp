@@ -9,6 +9,7 @@
 #include <aws/s3/model/DeleteBucketRequest.h>
 #include <aws/s3/model/CopyObjectRequest.h>
 #include <aws/s3/model/DeleteObjectRequest.h>
+#include <aws/s3/model/ListObjectsRequest.h>
 #include <sys/stat.h>
 #include <fstream>
 
@@ -82,7 +83,7 @@ namespace Minio
 
         if (stat(file_path.c_str(), &buffer) == -1)
         {
-            throw S3ErrorException("Error PutObject: File : " + file_name + "does not exist");
+            throw PathException("Error PutObject: File : " + file_name + "does not exist");
         }
         auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
         Aws::S3::Model::PutObjectRequest request;
@@ -130,6 +131,26 @@ namespace Minio
         {
             auto err = outcome.GetError();
             throw S3ErrorException("Error RemoveObjcet : " + err.GetExceptionName(), err.GetMessage());
+        }
+    }
+
+    void Minio::ListObjects(string bucket_name, vector<string> &objects)
+    {
+        auto s3_client = reinterpret_cast<Aws::S3::S3Client *>(s3_client_);
+        Aws::S3::Model::ListObjectsRequest request;
+        request.WithBucket(bucket_name);
+
+        auto outcome = s3_client->ListObjects(request);
+        if (!outcome.IsSuccess())
+        {
+            auto err = outcome.GetError();
+            throw S3ErrorException("Error ListObjcets : " + err.GetExceptionName(), err.GetMessage());
+        }
+
+        auto resp = outcome.GetResult().GetContents();
+        for (auto &bucket : resp)
+        {
+            objects.push_back(bucket.GetKey());
         }
     }
 

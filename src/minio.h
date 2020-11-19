@@ -31,11 +31,10 @@ namespace Minio
         void GetObject(string from_bucket, string object_key, string file_path);
 
         /**
-         * @brief upload data from a file to an object
-         * @param bucket_name       name of bucket
-         * @param file_path         absolute path of file
-         * @param file_name         name of file
-         * @return if file upload is success returned true, if file upload is error returned false
+         * @brief 上传一个对象到 Minio 中
+         * @param bucket_name       存储桶名称
+         * @param file_path         本地文件路径
+         * @param file_name         文件保存名
          */
         void PutObject(string bucket_name, string file_path, string file_name);
 
@@ -54,6 +53,12 @@ namespace Minio
          * @param  objcet_key       存储桶里的对象名称
          */
         void RemoveObject(string bucket_name, string objcet_key);
+
+        /**
+         * @brief 查询存储桶里所有的对象
+         * @param  bucket_name      存储桶名称
+         */
+        void ListObjects(string bucket_name, vector<string> &objects);
 
         /**
          * @brief 创建一个存储桶

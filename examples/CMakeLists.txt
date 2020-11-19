@@ -22,3 +22,9 @@ target_link_libraries(remove_objcet minio)
 
 add_executable(copy_objcet copy_objcet.cc)
 target_link_libraries(copy_objcet minio)
+
+add_executable(list_objcets list_objcets.cc)
+target_link_libraries(list_objcets minio)
+
+add_executable(put_object put_object.cc)
+target_link_libraries(put_object minio)

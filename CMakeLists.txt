@@ -6,7 +6,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
 
 option(MINIO_BUILD_EXAMPLE "option for build example" ON)
 
-set(AWSSDK_ROOT_DIR "/usr/local" CACHE PATH "AWSSDK Installed dir.")
+# AWSSDK_ROOT_DIR 设置无效，改用 CMAKE_PREFIX_PATH 代替，具体可以查看 README
+# set(AWSSDK_ROOT_DIR "/usr/local" CACHE PATH "AWSSDK Installed dir.")
 
 # 编译 minio 核心模组
 add_subdirectory(src)

@@ -64,7 +64,7 @@ cd minio-cpp-sdk
 mkdir build && cd build
 
 # 如果 aws-sdk-cpp 选择了自定义安装路径，则使用如下命令
-# cmake -DAWSSDK_ROOT_DIR=../aws-sdk-cpp/path/to/your/custom/install ..
+# cmake -DCMAKE_PREFIX_PATH=../aws-sdk-cpp/path/to/your/custom/install ..
 
 cmake ..
 make && make install

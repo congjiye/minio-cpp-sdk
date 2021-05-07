@@ -85,10 +85,16 @@ make && make install
 
 ### CMAKE 使用
 
-```text
+```cmake
+# 方式一
 include_directories("your-install-path/minio/include")
 link_directories("your-install-path/minio/lib)
 target_link_libraries(project PRIVATE minio)
+
+# 方式二
+set(Minio_CPP_ROOT_DIR "your-install-path/lib/cmake")
+target_link_libraries(target ${Minio_CPP_LIBRARIES})
+target_include_directories(target PUBLIC ${Minio_CPP_INCLUDE_DIRS})
 ```
 
 ### 下载文件

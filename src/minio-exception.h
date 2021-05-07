@@ -7,36 +7,69 @@
  *
  * @copyright Copyright (c) 2020 aydon
  */
-#pragma once
+#ifndef MINIO_CPP_SDK_MINIO_EXCEPTION_H_
+#define MINIO_CPP_SDK_MINIO_EXCEPTION_H_
 
 #include <stdexcept>
 #include <string>
 
-namespace Minio
-{
-    class MinioException : public std::logic_error
-    {
-    public:
-        explicit MinioException(const std::string &s)
-            : logic_error(s) {}
-        virtual ~MinioException() {}
-    };
+namespace Minio {
+class MinioException : public std::runtime_error {
+public:
+    explicit MinioException(const std::string &s) : runtime_error(s) {}
+    virtual ~MinioException() {}
+};
 
-    class S3ErrorException : public MinioException
-    {
-    public:
-        explicit S3ErrorException(const std::string &s)
-            : MinioException(s) {}
-        S3ErrorException(const std::string &name, const std::string &msg)
-            : MinioException(name + " : " + msg) {}
-        virtual ~S3ErrorException() {}
-    };
+class InvalidEndpointException : public MinioException {
+public:
+    explicit InvalidEndpointException(const std::string &s) : MinioException(s) {}
+    virtual ~InvalidEndpointException() {}
+};
 
-    class PathException : public std::logic_error
-    {
-    public:
-        explicit PathException(const std::string &s)
-            : logic_error(s) {}
-        virtual ~PathException() {}
-    };
-} // namespace Minio
+class InvalidAccessKeyException : public MinioException {
+public:
+    explicit InvalidAccessKeyException(const std::string &s) : MinioException(s) {}
+    virtual ~InvalidAccessKeyException() {}
+};
+
+class InvalidSecretKeyException : public MinioException {
+public:
+    explicit InvalidSecretKeyException(const std::string &s) : MinioException(s) {}
+    virtual ~InvalidSecretKeyException() {}
+};
+
+class InvalidBucketNameException : public MinioException {
+public:
+    explicit InvalidBucketNameException(const std::string &s) : MinioException(s) {}
+    InvalidBucketNameException(const std::string &bucket_name, const std::string &msg)
+        : MinioException(bucket_name + ": " + msg) {}
+    virtual ~InvalidBucketNameException() {}
+};
+
+class InvalidObjectNameException : public MinioException {
+public:
+    explicit InvalidObjectNameException(const std::string &s) : MinioException(s) {}
+    virtual ~InvalidObjectNameException() {}
+};
+
+class S3ErrorException : public MinioException {
+public:
+    explicit S3ErrorException(const std::string &s) : MinioException(s) {}
+    S3ErrorException(const std::string &name, const std::string &msg) : MinioException(name + " : " + msg) {}
+    virtual ~S3ErrorException() {}
+};
+
+class InvalidPathException : public MinioException {
+public:
+    explicit InvalidPathException(const std::string &s) : MinioException(s) {}
+    virtual ~InvalidPathException() {}
+};
+
+class TimeoutException : public MinioException {
+public:
+    TimeoutException() : MinioException("Timeout was reached") {}
+    virtual ~TimeoutException() {}
+};
+}  // namespace Minio
+
+#endif  // MINIO_CPP_SDK_MINIO_EXCEPTION_H_

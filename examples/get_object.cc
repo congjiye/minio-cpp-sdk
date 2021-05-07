@@ -15,9 +15,5 @@ int main(int argc, char **argv)
     {
         std::cerr << e.what() << std::endl;
     }
-    catch (const Minio::PathException &e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
     return 0;
 }

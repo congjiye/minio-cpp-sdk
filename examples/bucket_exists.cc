@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 
     try
     {
-        minio.BucketExists("test5");
+        minio.BucketExists("www");
     }
     catch (const Minio::MinioException &e)
     {

@@ -9,6 +9,15 @@
 
 你可以使用源码进行编译，也可以使用我们预编译好的包使用。[预编译包地址](https://github.com/JyCAydon/minio-cpp-sdk/releases/tag/V0.1.0)
 
+### 脚本安装
+
+执行在根目录下的 install.sh 文件安装 Minio C++ SDK.
+
+```bash
+chmod +x install.sh
+./install.sh
+```
+
 ### 源码编译
 
 Minio C++ SDK 是基于 AWS S3 的 SDK 二次开发的，因此在源码编译 SDK 前我们需要安装 aws-sdk-cpp。
@@ -57,14 +66,14 @@ make install
 
 #### 编译 minio-cpp-sdk
 
-用户可以通过修改 `-DCMAKE_PREFIX_INSTALL` 来设置安装目录，默认目录为当前源码文件下的 `install` 文件夹。
+用户可以通过修改 `-DAWSSDK_ROOT_DIR` 来设置安装目录，默认目录为当前源码文件下的 `install` 文件夹。
 
 ```bash
 cd minio-cpp-sdk
 mkdir build && cd build
 
 # 如果 aws-sdk-cpp 选择了自定义安装路径，则使用如下命令
-# cmake -DCMAKE_PREFIX_PATH=../aws-sdk-cpp/path/to/your/custom/install ..
+# cmake -DAWSSDK_ROOT_DIR=../aws-sdk-cpp/path/to/your/custom/install ..
 
 cmake ..
 make && make install
@@ -111,4 +120,4 @@ int main()
 ## TODO
 
 - [ ] 完善所有接口实现
-- [ ] 并行接口测试
+- [X] 并行接口测试

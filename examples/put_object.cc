@@ -13,12 +13,8 @@ int main(int argc, char **argv)
     {
         minio.PutObject("testupload", "Makefilew", "Makefile");
     }
-    catch(const Minio::PathException& e)
+    catch(const Minio::MinioException& e)
     {
         std::cerr << e.what() << "\n";
-    }
-    catch (const Minio::MinioException &e)
-    {
-        std::cerr << e.what() << '\n';
     }
 }
